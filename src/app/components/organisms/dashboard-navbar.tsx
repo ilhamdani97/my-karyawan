@@ -141,7 +141,7 @@ export default function DashboardNavbar(props: IDashboardNavbarProps) {
                 <Input
                   type="email"
                   label="Search"
-                  color={'blue'}
+                  color="green"
                   value={search}
                   onChange={onChange}
                   className="pr-20"

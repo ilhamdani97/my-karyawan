@@ -7,7 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { routes } from "./routes";
 import { Payroll } from "@/app/pages";
 
-function App() {
+function App(): JSX.Element {
   const pathUrl = window.location.pathname.split("/");
   const pathOrigin = routes.filter((data) => data.layout.includes(pathUrl[1]));
   

@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://103.127.96.184:5001/gateway';
+export const API_BASE_URL = 'https://api.mykaryawan.com/gateway';

@@ -445,9 +445,9 @@ export default function Area (props: IAreaProps) {
               // onChange={(e: { target: { value: any; }; }) => setAreaName(e.target.value)}
               crossOrigin={undefined}
             />
-            {/* <Typography variant="small" color="red">
+            <Typography variant="small" color="red">
                 error
-            </Typography> */}
+            </Typography>
         </div>
         <div className="flex flex-col gap-1">
           <Input
@@ -461,9 +461,9 @@ export default function Area (props: IAreaProps) {
             // onChange={(e: { target: { value: any; }; }) => setAreaCode(e.target.value)}
             crossOrigin={undefined}
           />
-          {/* <Typography variant="small" color="red">
+          <Typography variant="small" color="red">
               error
-          </Typography> */}
+          </Typography>
           </div>
       </div>
       }

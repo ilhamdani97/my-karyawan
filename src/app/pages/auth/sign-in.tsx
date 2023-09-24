@@ -48,7 +48,7 @@ export function SignIn () {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-tl from-green-900 via-green-300 to-green-900">
+    <div className="relative min-h-screen w-full bg-gradient-to-tl from-blue-900 via-blue-300 to-blue-900">
       <img
         src='/img/signin-icon.webp'
         className="hidden lg:flex absolute inset-0 z-0 h-full w-full object-cover"
@@ -58,21 +58,21 @@ export function SignIn () {
         <Card className="absolute top-1/2 left-1/2 lg:left-3/4 w-5/6 max-w-[26rem] max-w-xs[22rem] -translate-y-2/4 -translate-x-2/4">
           <CardHeader
             variant="gradient"
-            color="green"
+            color="blue"
             className="mb-4 grid h-28 place-items-center"          >
             <img src='/img/logos/icon_logo.webp' alt="" width={250} />
           </CardHeader>
           <CardBody className="flex flex-col gap-4">
             <form className="flex flex-col gap-4" onSubmit={handleLogin}>
-              <Input required onChange={(e) => setUseraname(e.target.value)} color='green' type="input" label="Username" size="lg" crossOrigin={undefined} />
-              <Input required onChange={(e) => setPassword(e.target.value)} color='green' type="password" label="Password" size="lg" crossOrigin={undefined} />
+              <Input required onChange={(e) => setUseraname(e.target.value)} color='blue' type="input" label="Username" size="lg" crossOrigin={undefined} />
+              <Input required onChange={(e) => setPassword(e.target.value)} color='blue' type="password" label="Password" size="lg" crossOrigin={undefined} />
               <Typography color="blue-gray" className={'text-xs'}>
                 Forgot Password? {' '}
-                <a href="#" color="green" className="hover:underline font-medium hover:text-green-500"> Reset Password</a>
+                <a href="#" color="blue" className="hover:underline font-medium hover:text-blue-500"> Reset Password</a>
               </Typography>
 
-              <Button type={'submit'} disabled={loading || !password || !username} onClick={handleLogin} className={'flex justify-center mt-2'} variant="gradient" fullWidth color="green">
-                {loading ? <Spinner color="green" /> : 'Sign In' } 
+              <Button type={'submit'} disabled={loading || !password || !username} onClick={handleLogin} className={'flex justify-center mt-2'} variant="gradient" fullWidth color="blue">
+                {loading ? <Spinner color="blue" /> : 'Sign In' } 
               </Button>
             </form>
             

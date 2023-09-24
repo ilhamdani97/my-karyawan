@@ -72,9 +72,9 @@ export const axiosRequest = async ({
             cookies.remove('token');
             snackBar('error', e.response.data);
 
-            // if ([401].includes(e.response.status)) {
-            //     window.location.replace('/signin');
-            // }
+            if ([401].includes(e.response.status)) {
+                window.location.replace('/signin');
+            }
         }
        
      }

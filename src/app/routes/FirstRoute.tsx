@@ -6,7 +6,6 @@ export const FirstRoute = ({ children }) => {
   const cookies = new Cookies();
   const cookie = cookies.get('token');
   const isLogin = cookie && cookie.length > 0;
-  // const isLogin = true;
 
   if (!isLogin) {
     // user is not authenticated

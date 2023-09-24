@@ -5,14 +5,13 @@ import React, { useEffect, useState } from "react";
 interface Props {
     dataScadule?: Array<string>
 }
-const dateArray = ["", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00", ""]
+const dateArray = ["Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00","Meeting 08:00", "", "Meeting 08:00", "", "Meeting 08:00", ""]
 const ScheduleCalendar = ({
     dataScadule
 }: Props) => {
 
     const [totalDate, setTotalDate] = useState<number>(0);
-    const dateNow = parseInt(moment().format('DD'));
-    // const totalDate
+    const dateNow = parseInt(moment().format('DD'))
     useEffect(() => {
         const totalDate = moment(new Date()).daysInMonth();
         setTotalDate(totalDate);
@@ -23,6 +22,7 @@ const ScheduleCalendar = ({
                 <div className="header flex justify-between border-b p-2">
                     <span className="text-lg font-bold">
                         {`${moment().format('MMMM')} ${moment().format('YYYY')}`}
+                        {/* Agustus 2023 */}
                     </span>
                     <div className="buttons">
                         <button className="p-1">
@@ -76,41 +76,39 @@ const ScheduleCalendar = ({
                         </tr>
                     </thead>
                     <tbody>
-                        {Array.from({length: totalDate}, (_, index) => {
-                            return (
-                                <>
-                                    {index % 7 === 0 && (
-                                        <tr key={index} className="text-center h-20 mb-4">
-                                            {dateArray.slice(index, index + 7).map((data, i) => (
-                                                <td className={`border p-1 h-10 2xl:w-32 xl:w-20 lg:w-24 md:w-12 sm:w-2 w-2 overflow-auto transition cursor-pointer duration-500 ease bg-gray-100 hover:bg-blue-100 ${(index + (i + 1)) === dateNow ? 'bg-blue-100' : ''} `}>
-                                                    <div className="flex flex-col h-40 2xl:w-32	xl:w-30	lg:w-24 md:w-12 sm:w-6 w-8 mx-auto overflow-hidden">
-                                                        {/* content  */}
-                                                        <div className="top h-5 w-full">
-                                                            <span className="text-gray-500">{index + (i + 1)}</span>
-                                                        </div>
-                                                        <div className="bottom flex-grow h-30 py-1 w-full cursor-pointer">
-                                                            {data && (
-                                                                <Tooltip content="Meeting 2:00~14:00">
-                                                                    <div className="event bg-purple-400 text-white rounded p-1 text-xs mb-1">
-                                                                        <span className="event-name">
-                                                                            Meeting
-                                                                        </span>
-                                                                        <span className="time">
-                                                                            12:00~14:00
-                                                                        </span>
-                                                                    </div>
-                                                                </Tooltip>
-                                                            )}
-                                                            
-                                                        </div>
+                        {Array.from({length: totalDate}, (_, index) =>  (
+                            <>
+                                {index % 7 === 0 && (
+                                    <tr key={index} className="text-center h-20 mb-4">
+                                        {dateArray.slice(index, index + 7).map((data, i) => (
+                                            <td className={`border p-1 h-10 2xl:w-32 xl:w-20 lg:w-24 md:w-12 sm:w-2 w-2 overflow-auto transition cursor-pointer duration-500 ease bg-gray-100 hover:bg-blue-100 ${(index + (i + 1)) === dateNow ? 'bg-blue-100' : ''} `}>
+                                                <div className="flex flex-col h-40 2xl:w-32	xl:w-30	lg:w-24 md:w-12 sm:w-6 w-8 mx-auto overflow-hidden">
+                                                    {/* content  */}
+                                                    <div className="top h-5 w-full">
+                                                        <span className="text-gray-500">{index + (i + 1)}</span>
                                                     </div>
-                                                </td>
-                                            ))}
-                                        </tr>
-                                    )}
-                                </>
-                            )
-                        })}
+                                                    <div className="bottom flex-grow h-30 py-1 w-full cursor-pointer">
+                                                        {data && (
+                                                            <Tooltip content="Meeting 2:00~14:00">
+                                                                <div className="event bg-purple-400 text-white rounded p-1 text-xs mb-1">
+                                                                    <span className="event-name">
+                                                                        Meeting
+                                                                    </span>
+                                                                    <span className="time">
+                                                                        12:00~14:00
+                                                                    </span>
+                                                                </div>
+                                                            </Tooltip>
+                                                        )}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        ))}
+                                    </tr>
+                                )}
+                            </>
+                        ))}
                     </tbody>
                 </table>
             </div>
