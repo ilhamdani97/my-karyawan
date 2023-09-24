@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#floating-ui-root {
+    > div {
+        z-index: 50 !important;
+    }
+}
+
+.react-datepicker__tab-loop {
+    position: absolute;
+    top: 0;
+}
+
+.react-datepicker__day--selected {
+    border-radius: 0.3rem;
+    background-color: #66bb6a !important;
+    color: #fff;
+}
+.css-1igvx5z-timeSelected-time-TopBar {
+    color: #46a24a !important;
+}
+
+.css-nntsr1-time {
+    color: #46a24a !important;
+}
+
+.css-rt16tf-timeSelected-time {
+    color: #46a24a !important;
+}
+
+.Toastify__toast-container {
+    z-index: 10000;
+}
